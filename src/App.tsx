@@ -1,11 +1,14 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { useSelector } from "react-redux";
+import { selectUserName } from "./store/user/selector";
+import { RootState } from "./store/store";
 
 function App() {
-  const [count, setCount] = useState(0)
-
+  const [count, setCount] = useState(0);
+  const userName = useSelector((state: RootState) => selectUserName(state));
   return (
     <>
       <div>
@@ -28,8 +31,9 @@ function App() {
       <p className="read-the-docs">
         Click on the Vite and React logos to learn more
       </p>
+      <div>{userName}</div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
