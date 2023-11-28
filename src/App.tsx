@@ -5,6 +5,7 @@ import "./App.css";
 import { useSelector } from "react-redux";
 import { selectUserName } from "./store/user/selector";
 import { RootState } from "./store/store";
+import Users from "./components/Users";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -32,6 +33,7 @@ function App() {
         Click on the Vite and React logos to learn more
       </p>
       <div>{userName}</div>
+      <Users />
     </>
   );
 }
